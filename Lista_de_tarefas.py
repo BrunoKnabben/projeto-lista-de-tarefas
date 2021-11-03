@@ -44,8 +44,8 @@ while opcao != 5:
             contador -= 1
 
     if opcao == 4:
-        if len(tarefas) != contador:
-            print('Não há nada para refazer\n')
-        else:
+        try:
             tarefas[f'Tarefa {contador}'] = temp[f'Tarefa {contador}']
             contador += 1
+        except KeyError:
+            print('Não há nada para refazer.')
